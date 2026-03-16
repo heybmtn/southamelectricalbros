@@ -67,11 +67,12 @@
     ============================================= */
     :root {
       /* Brand Colours */
-      --accent:       #2596be;   /* brand blue */
-      --accent-dark:  #1a7a9e;   /* hover state – 15% darker */
-      --dark:         #0d2b38;   /* deep blue-dark – hero, footer */
-      --dark-mid:     #163a4a;   /* card backgrounds on dark */
-      --page-bg:      #f0f8fb;   /* very light blue-tinted off-white */
+      --accent:       #fcc67c;   /* warm amber – CTA buttons, highlights */
+      --accent-dark:  #e8a84a;   /* hover state – darkened amber */
+      --dark:         #2f3092;   /* brand purple – hero, footer */
+      --dark-mid:     #3d3ea8;   /* lighter purple – cards on dark */
+      --page-bg:      #f7f7f8;   /* neutral off-white with grey undertone */
+      --grey:         #838487;   /* brand grey – secondary text, borders */
 
       /* Typography */
       --body:   1.25rem;         /* 20px */
@@ -149,7 +150,7 @@
       margin: 0 auto;
       padding: 0 1.25rem;
       padding-top: env(safe-area-inset-top);
-      height: 64px;
+      height: 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -180,14 +181,14 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 800;
       font-size: 1.05rem;
-      color: var(--accent);
+      color: var(--dark);
       min-height: 48px;
       padding: 0 0.5rem;
       border-radius: 8px;
       transition: color 0.2s;
       white-space: nowrap;
     }
-    .header-phone:hover { color: var(--accent-dark); }
+    .header-phone:hover { color: var(--dark-mid); }
 
     /* Below 360px – icon only */
     @media (max-width: 360px) {
@@ -211,8 +212,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        radial-gradient(circle at 20% 80%, rgba(232,160,32,0.12) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(232,160,32,0.08) 0%, transparent 40%);
+        radial-gradient(circle at 20% 80%, rgba(252,198,124,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(252,198,124,0.07) 0%, transparent 40%);
       pointer-events: none;
     }
 
@@ -244,11 +245,13 @@
       height: 8px;
       border-radius: 50%;
       background: #3DCA6F;
-      animation: pulse-dot 1.8s ease-in-out infinite;
+      box-shadow: 0 0 0 0 rgba(61,202,111,0.5);
+      animation: pulse-dot 2s ease-out infinite;
     }
     @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(1.3); }
+      0%   { box-shadow: 0 0 0 0 rgba(61,202,111,0.5); }
+      70%  { box-shadow: 0 0 0 6px rgba(61,202,111,0); }
+      100% { box-shadow: 0 0 0 0 rgba(61,202,111,0); }
     }
 
     #hero h1 {
@@ -299,12 +302,12 @@
 
     .btn-primary {
       background: var(--accent);
-      color: #ffffff;
-      box-shadow: 0 4px 20px rgba(37,150,190,0.35);
+      color: var(--dark);
+      box-shadow: 0 4px 20px rgba(252,198,124,0.4);
     }
     .btn-primary:hover {
       background: var(--accent-dark);
-      box-shadow: 0 6px 24px rgba(37,150,190,0.45);
+      box-shadow: 0 6px 24px rgba(252,198,124,0.5);
     }
 
     .btn-secondary {
@@ -327,7 +330,7 @@
        TRUST BAR
     ============================================= */
     #trust-bar {
-      background: var(--accent);
+      background: var(--dark);
       color: #ffffff;
       padding: 0.9rem 1.25rem;
     }
@@ -442,16 +445,16 @@
     .service-icon {
       width: 48px;
       height: 48px;
-      background: rgba(232,160,32,0.12);
+      background: rgba(47,48,146,0.08);
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 1.25rem;
-      color: var(--accent);
+      color: var(--dark);
     }
     .service-card.emergency .service-icon {
-      background: rgba(232,160,32,0.2);
+      background: rgba(252,198,124,0.2);
     }
 
     .service-title {
@@ -482,8 +485,8 @@
 
     .photo-placeholder {
       aspect-ratio: 4/3;
-      background: #daeef5;
-      border: 2px dashed #a8d4e3;
+      background: #ebebec;
+      border: 2px dashed #c0c0c2;
       border-radius: var(--card-radius);
       display: flex;
       flex-direction: column;
@@ -612,13 +615,13 @@
     }
 
     .area-tag {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(47,48,146,0.08);
+      border: 1px solid rgba(47,48,146,0.2);
       border-radius: 999px;
       padding: 0.3rem 0.9rem;
       font-size: var(--label);
       font-weight: 700;
-      color: rgba(255,255,255,0.75);
+      color: var(--dark);
     }
 
     .accreditations {
@@ -628,8 +631,8 @@
       margin-top: 1.5rem;
     }
     .accred-badge {
-      background: rgba(232,160,32,0.15);
-      border: 1px solid rgba(232,160,32,0.3);
+      background: rgba(252,198,124,0.15);
+      border: 1px solid rgba(252,198,124,0.4);
       border-radius: 8px;
       padding: 0.4rem 0.9rem;
       font-size: var(--label);
@@ -721,7 +724,7 @@
     .form-submit-btn {
       width: 100%;
       background: var(--accent);
-      color: #ffffff;
+      color: var(--dark);
       border: none;
       border-radius: 8px;
       padding: 1rem 2rem;
@@ -731,13 +734,13 @@
       cursor: pointer;
       min-height: 56px;
       transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(37,150,190,0.3);
+      box-shadow: 0 4px 20px rgba(252,198,124,0.35);
       margin-top: 0.5rem;
     }
     .form-submit-btn:hover {
       background: var(--accent-dark);
       transform: translateY(-2px);
-      box-shadow: 0 6px 28px rgba(37,150,190,0.4);
+      box-shadow: 0 6px 28px rgba(252,198,124,0.45);
     }
     .form-submit-btn:active { transform: translateY(0); }
 
@@ -895,7 +898,7 @@
   <header id="site-header" role="banner">
     <div class="header-inner">
 
-      <img src="logo.png" alt="Southam Bros Electrical" width="140" height="44" style="object-fit:contain;">
+      <img src="logo.png" alt="Southam Bros Electrical" width="200" height="64" style="object-fit:contain;">
 
       <!-- Click-to-call phone number in accent colour -->
       <a href="tel:07920043082" class="header-phone" aria-label="Call Southam Bros Electrical on 07920 043082">
@@ -912,11 +915,6 @@
   ============================================= -->
   <section id="hero" aria-labelledby="hero-heading">
     <div class="hero-inner">
-
-      <div class="booking-badge">
-        <span class="dot" aria-hidden="true"></span>
-        Taking bookings now
-      </div>
 
       <!-- H1: trade type + location -->
       <h1 id="hero-heading">
@@ -1199,30 +1197,33 @@
             We're NICEIC-approved and fully insured, so you get total peace of mind whatever the job. We work with hundreds of local homeowners, building contractors, and businesses right across Oxfordshire — and we're proud that so much of our work comes from people recommending us to friends and neighbours.
           </p>
 
-          <!-- Accreditation badges -->
-          <div class="accreditations reveal" aria-label="Accreditations and certifications">
-            <span class="accred-badge">NICEIC Approved</span>
-            <span class="accred-badge">Part P Certified</span>
-            <span class="accred-badge">Fully Insured</span>
-            <span class="accred-badge">Company No: 7588284</span>
-          </div>
-
-          <!-- Coverage area tags from Section 3 -->
-          <div class="area-tags reveal" aria-label="Areas covered">
-            <span class="area-tag">Carterton</span>
-            <span class="area-tag">Witney</span>
-            <span class="area-tag">Burford</span>
-            <span class="area-tag">Chipping Norton</span>
-            <span class="area-tag">Charlbury</span>
-            <span class="area-tag">Woodstock</span>
-            <span class="area-tag">Eynsham</span>
-            <span class="area-tag">Faringdon</span>
-            <span class="area-tag">Abingdon</span>
-            <span class="area-tag">Oxford</span>
-            <span class="area-tag">All Oxfordshire</span>
-          </div>
+          <!-- Coverage area tags moved to We Cover section below -->
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       WE COVER SECTION
+  ============================================= -->
+  <section id="we-cover" aria-labelledby="cover-heading" style="background:#fff;padding:3.5rem 1.25rem;">
+    <div class="section-inner" style="text-align:center;">
+      <span class="eyebrow reveal">Coverage area</span>
+      <h2 class="section-heading reveal" id="cover-heading" style="margin-bottom:0.5rem;">Areas We Cover</h2>
+      <p class="section-sub reveal" style="margin:0 auto 2rem;">Based in Carterton, we travel across the whole of Oxfordshire. If you're not sure whether we cover your area, just give us a call.</p>
+      <div class="area-tags reveal" aria-label="Areas covered" style="justify-content:center;">
+        <span class="area-tag">Carterton</span>
+        <span class="area-tag">Witney</span>
+        <span class="area-tag">Burford</span>
+        <span class="area-tag">Chipping Norton</span>
+        <span class="area-tag">Charlbury</span>
+        <span class="area-tag">Woodstock</span>
+        <span class="area-tag">Eynsham</span>
+        <span class="area-tag">Faringdon</span>
+        <span class="area-tag">Abingdon</span>
+        <span class="area-tag">Oxford</span>
+        <span class="area-tag">All Oxfordshire</span>
       </div>
     </div>
   </section>
@@ -1314,7 +1315,7 @@
           </div>
           <h3>Quote request sent!</h3>
           <p>Thanks — we'll be in touch shortly. If you need to speak to us urgently, give us a call:</p>
-          <a href="tel:07920043082" class="btn btn-primary" style="display:inline-flex;margin:0 auto;color:#fff;" aria-label="Call Southam Bros Electrical on 07920 043082">
+          <a href="tel:07920043082" class="btn btn-primary" style="display:inline-flex;margin:0 auto;color:var(--dark);" aria-label="Call Southam Bros Electrical on 07920 043082">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Call 07920 043082
           </a>
@@ -1363,10 +1364,6 @@
         <div class="footer-legal">
           <span>Electrician · Carterton &amp; Oxfordshire</span>
           <span>·</span>
-          <a href="#">Privacy Policy</a>
-          <span>·</span>
-          <a href="#">Cookie Policy</a>
-          <span>·</span>
           <span>Registered in England No: 7588284</span>
           <span>·</span>
           <!-- Copyright year auto-updates via JS -->
@@ -1375,7 +1372,7 @@
 
         <!-- Attribution — always solid white, always present -->
         <div class="footer-credit">
-          Designed and developed with ♥ by <a href="https://letterboxdrops.co.uk" target="_blank" rel="noopener">Letterbox Drops</a>
+          Designed and developed with ♥ by <a href="https://letterboxdrops.uk/" target="_blank" rel="noopener">Letterbox Drops</a>
         </div>
       </div>
 
