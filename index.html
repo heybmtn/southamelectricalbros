@@ -133,6 +133,38 @@
     }
 
     /* =============================================
+       ACCREDITATION BAR
+    ============================================= */
+    #accred-bar {
+      background: #fff;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      padding: 1.5rem 1.25rem;
+    }
+    .accred-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .accred-logo {
+      height: 56px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      filter: grayscale(30%);
+      opacity: 0.85;
+      transition: filter 0.2s, opacity 0.2s;
+    }
+    .accred-logo:hover { filter: grayscale(0%); opacity: 1; }
+    @media (max-width: 500px) {
+      .accred-bar-inner { gap: 1.5rem; }
+      .accred-logo { height: 44px; }
+    }
+
+    /* =============================================
        STICKY HEADER
     ============================================= */
     /* Header is always white – never brand colours */
@@ -324,6 +356,37 @@
     @media (max-width: 400px) {
       .hero-ctas { flex-direction: column; align-items: center; }
       .btn { width: 100%; justify-content: center; }
+    }
+
+    /* =============================================
+       ACCREDITATION LOGOS BAR
+    ============================================= */
+    #accred-bar {
+      background: #fff;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      padding: 1.5rem 1.25rem;
+    }
+    .accred-bar-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .accred-logo {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(20%);
+      opacity: 0.85;
+      transition: opacity 0.2s, filter 0.2s;
+    }
+    .accred-logo:hover { opacity: 1; filter: grayscale(0%); }
+    @media (max-width: 480px) {
+      .accred-bar-inner { gap: 1.75rem; }
+      .accred-logo { height: 44px; }
     }
 
     /* =============================================
@@ -922,15 +985,13 @@
       </h1>
 
       <p class="hero-sub">
-        Family-run, NICEIC-approved electrical contractors. Over 17 years delivering
-        high-quality domestic &amp; commercial electrical work across Oxfordshire —
-        always professional, always on time.
+        Family-run electrical contractors serving Carterton and the whole of Oxfordshire.
+        Whatever the job — big or small — we'll get it done properly.
       </p>
 
       <div class="hero-ctas">
         <!-- Primary CTA — scrolls to quote form -->
         <a href="#quote-form" class="btn btn-primary" aria-label="Get a free quote from Southam Bros Electrical">
-          <!-- Lightning icon -->
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           Get a Free Quote
         </a>
@@ -943,6 +1004,17 @@
 
     </div>
   </section>
+
+  <!-- =============================================
+       ACCREDITATION LOGOS — below hero
+  ============================================= -->
+  <div id="accred-bar">
+    <div class="accred-bar-inner">
+      <img src="img-1.png" alt="Accreditation logo" class="accred-logo">
+      <img src="img-2.png" alt="Accreditation logo" class="accred-logo">
+      <img src="img-3.png" alt="Accreditation logo" class="accred-logo">
+    </div>
+  </div>
 
   <!-- =============================================
        TRUST BAR
@@ -1002,8 +1074,7 @@
       <span class="eyebrow reveal">What we do</span>
       <h2 class="section-heading reveal" id="services-heading">Electrical Services in Oxfordshire</h2>
       <p class="section-sub reveal">
-        From complete rewires to EV charger installations, we handle all things
-        electrical — for homes and businesses across Carterton, Witney, and beyond.
+        From complete rewires to EV charger installations — domestic, commercial, and everything in between.
       </p>
 
       <div class="services-grid">
@@ -1023,7 +1094,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <h3 class="service-title">Commercial Electrical</h3>
-          <p class="service-desc">Office fit-outs, warehouse wiring, retail units and more. We've worked with businesses and building contractors across Oxfordshire for over 17 years.</p>
+          <p class="service-desc">Office fit-outs, warehouse wiring, retail units and more. We work closely with building contractors and business owners to get the job done right, first time.</p>
         </div>
 
         <!-- Service 3: Lighting -->
@@ -1060,6 +1131,24 @@
           </div>
           <h3 class="service-title">Electrical Heating</h3>
           <p class="service-desc">Underfloor heating, electric radiators and heating controls. Warm, efficient solutions installed neatly and reliably — no mess, no fuss.</p>
+        </div>
+
+        <!-- Service 7: Solar PV -->
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <h3 class="service-title">Solar PV Installation</h3>
+          <p class="service-desc">Generate your own clean energy and reduce your electricity bills. We design and install solar panel systems for homes and businesses across Oxfordshire, handling everything from survey to sign-off.</p>
+        </div>
+
+        <!-- Service 8: Battery Storage -->
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="11" rx="2" ry="2"/><path d="M22 11v4"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="14" y1="12" x2="14" y2="12"/></svg>
+          </div>
+          <h3 class="service-title">Battery Storage</h3>
+          <p class="service-desc">Make the most of your solar energy by storing what you don't use. We supply and install home battery systems that keep your lights on and your bills down — day and night.</p>
         </div>
 
         <!-- Emergency callout card -->
@@ -1105,19 +1194,19 @@
       <div class="stats-row">
         <div class="stat-block reveal">
           <div class="stat-number">17+</div>
-          <div class="stat-label">Years Trading</div>
+          <div class="stat-label">Years in Business</div>
         </div>
         <div class="stat-block reveal">
           <div class="stat-number">100s</div>
-          <div class="stat-label">Happy Customers</div>
+          <div class="stat-label">Jobs Completed</div>
         </div>
         <div class="stat-block reveal">
           <div class="stat-number">5★</div>
-          <div class="stat-label">Average Review</div>
+          <div class="stat-label">Customer Rating</div>
         </div>
         <div class="stat-block reveal">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">NICEIC Compliant</div>
+          <div class="stat-number">11</div>
+          <div class="stat-label">Areas Covered</div>
         </div>
       </div>
 
@@ -1190,11 +1279,11 @@
           <h2 class="section-heading reveal" id="about-heading">Family-Run Electricians You Can Rely On</h2>
 
           <p class="reveal">
-            Southam Bros Electrical is a family business based in Carterton, Oxfordshire. Founded over 17 years ago by brothers Mark and Tom, we've built our reputation one job at a time — through honest pricing, tidy workmanship, and turning up exactly when we say we will.
+            Southam Bros Electrical is a family business run by brothers Mark and Tom, based in Carterton, Oxfordshire. We started doing small local jobs and have grown steadily — because we do what we say, turn up when we say, and leave every site clean and tidy.
           </p>
 
           <p class="reveal">
-            We're NICEIC-approved and fully insured, so you get total peace of mind whatever the job. We work with hundreds of local homeowners, building contractors, and businesses right across Oxfordshire — and we're proud that so much of our work comes from people recommending us to friends and neighbours.
+            Whether it's a single socket or a full commercial fit-out, every job gets the same care and attention. We're proud that the majority of our work comes from repeat customers and personal recommendations.
           </p>
 
           <!-- Coverage area tags moved to We Cover section below -->
@@ -1349,12 +1438,18 @@
 
           <div class="footer-contact-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
-            <a href="/cdn-cgi/l/email-protection#02716d77766a636f60706d7142656f636b6e2c616d6f"><span class="__cf_email__" data-cfemail="8bf8e4feffe3eae6e9f9e4f8cbece6eae2e7a5e8e4e6">[email&#160;protected]</span></a>
+            <a href="mailto:southambros@gmail.com">southambros@gmail.com</a>
           </div>
 
           <div class="footer-contact-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <span>37 Ashfield Road, Carterton, OX18 3RD</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <!-- Facebook icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <a href="https://www.facebook.com/southambroselectrical" target="_blank" rel="noopener">Facebook</a>
           </div>
 
         </div>
@@ -1382,7 +1477,7 @@
   <!-- =============================================
        JAVASCRIPT
   ============================================= -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     /* Copyright year */
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
 
