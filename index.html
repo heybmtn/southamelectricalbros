@@ -1356,19 +1356,24 @@
 
           <div class="form-row">
             <div class="form-group">
+              <label for="field-email">Email Address</label>
+              <input type="email" id="field-email" name="email" autocomplete="email" placeholder="e.g. john@example.com">
+            </div>
+            <div class="form-group">
               <label for="field-postcode">Postcode<span class="required" aria-label="required">*</span></label>
               <input type="text" id="field-postcode" name="postcode" required autocomplete="postal-code" placeholder="e.g. OX18 3RD" aria-required="true">
             </div>
-            <div class="form-group">
-              <label for="field-urgency">How soon do you need us?</label>
-              <select id="field-urgency" name="urgency" aria-label="How urgently is this job needed?">
-                <option value="">Please select…</option>
-                <option value="urgent">Urgent — as soon as possible</option>
-                <option value="this-week">This week</option>
-                <option value="flexible">Flexible / just planning ahead</option>
-                <option value="quote-only">Just a quote for now</option>
-              </select>
-            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="field-urgency">How soon do you need us?</label>
+            <select id="field-urgency" name="urgency" aria-label="How urgently is this job needed?">
+              <option value="">Please select…</option>
+              <option value="urgent">Urgent — as soon as possible</option>
+              <option value="this-week">This week</option>
+              <option value="flexible">Flexible / just planning ahead</option>
+              <option value="quote-only">Just a quote for now</option>
+            </select>
           </div>
 
           <div class="form-group">
